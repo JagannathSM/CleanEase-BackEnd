@@ -48,7 +48,7 @@ io.on('connection', (socket) => {
     socket.on('StatusUpdatedNotification', (data) => {
         console.log(data);
         // Broadcast the updated booking status to the specific user
-        io.to(data.userId).emit('bookingStatusUpdated', data);
+        socket.to(data.userId).emit('bookingStatusUpdated', data);
     });
 });
 //
