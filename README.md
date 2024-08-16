@@ -85,12 +85,12 @@ TEST_KEY_SECRET=YOUR_RAZOR_PAY_SECRET
 **API END-POINT EXPLANATION**
 
 1. AUTH-ROUTE ---> /api/auth
-	POST -- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
-	GET  -- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
-	POST -- /login --> To Login registered User and generate JWT
-	POST -- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
-	GET  -- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset there password.
-	PUT  -- /updatePass/:passResetToken --> To Update the user password.
+	-- POST -- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
+	-- GET  -- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
+	-- POST -- /login --> To Login registered User and generate JWT
+	-- POST -- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
+	-- GET  -- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset there password.
+	-- PUT  -- /updatePass/:passResetToken --> To Update the user password.
 
 3. USER-ROUTE ---> /api/user (REQUIRED USER JWT)
 
