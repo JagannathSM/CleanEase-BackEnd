@@ -41,6 +41,10 @@ io.on('connection', (socket) => {
         console.log('user disconnected: ', socket.id);
     });
 
+    socket.on("joinRoom",(data) => {
+        socket.join(data);
+    })
+
     socket.on('StatusUpdatedNotification', (data) => {
         console.log(data);
         // Broadcast the updated booking status to the specific user
