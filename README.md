@@ -54,7 +54,7 @@ This repository contains the backend of a functional booking platform for a clea
 |-- package-lock
 ```
 
-## 🧪 How to Run the Frontend
+## 🧪 How to Run the BackEnd
 **Install Dependencies** 📦
    ```bash
 	npm install express
