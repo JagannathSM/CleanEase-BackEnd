@@ -86,56 +86,56 @@ TEST_KEY_SECRET=YOUR_RAZOR_PAY_SECRET
 
 AUTH-ROUTE ---> /api/auth
       
-	- [x] POST	- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
-	- [x] GET	- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
-	- [x] POST	- /login --> To Login registered User and generate JWT
-	- [x] POST	- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
-	- [x] GET	- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset there password.
-	- [x] PUT	- /updatePass/:passResetToken --> To Update the user password.
+	POST	- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
+	GET	- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
+	POST	- /login --> To Login registered User and generate JWT
+	POST	- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
+	GET	- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset there password.
+	PUT	- /updatePass/:passResetToken --> To Update the user password.
 
 USER-ROUTE ---> /api/user (REQUIRED USER JWT)
 
-	- [x] GET	- /getProfile --> To get the user details.
-	- [x] PUT	- /updateProfile --> To update user details.
+	GET	- /getProfile --> To get the user details.
+	PUT	- /updateProfile --> To update user details.
 
 BOOKING-ROUTE ---> /api/bookings (REQUIRED USER JWT)
 
-	- [x] POST	- /create/:cleanSubCategoriesID --> User to create bookings
-	- [x] GET	- /get --> Get All User's Bookings.
-	- [x] PUT	- /update/:userBookingID --> To edit the user booking
-	- [x] DELETE	- /delete/:bookingID --> To delete user bookings
-	- [x] POST	- /review/:_id --> To create user review
-	- [x] GET	- /review/:_id --> To get all reviews for particular service (NO NEED FOR JWT)
-	- [x] DELETE	- /review/:_id/:deleteID --> TO delete the user review
-	- [x] PUT	- /review/:_id/:reviewID --> To Update the user Review
-	- [x] PUT	- /payment-update --> To Update the payment status for user bookings.
+	POST	- /create/:cleanSubCategoriesID --> User to create bookings
+	GET	- /get --> Get All User's Bookings.
+	PUT	- /update/:userBookingID --> To edit the user booking
+	DELETE	- /delete/:bookingID --> To delete user bookings
+	POST	- /review/:_id --> To create user review
+	GET	- /review/:_id --> To get all reviews for particular service (NO NEED FOR JWT)
+	DELETE	- /review/:_id/:deleteID --> TO delete the user review
+	PUT	- /review/:_id/:reviewID --> To Update the user Review
+	PUT	- /payment-update --> To Update the payment status for user bookings.
 	
 NOTIFICATION-ROUTE ---> /api/notification (REQUIRED USER JWT)
 
-	- [x] POST	- /create --> Create User Notification
-	- [x] GET	- /get --> Get user Notification
-	- [x] DELETE	- /delete/:_id --> TO Delete User Notification
+	POST	- /create --> Create User Notification
+	GET	- /get --> Get user Notification
+	DELETE	- /delete/:_id --> TO Delete User Notification
 
 CLEANEASE-ROUTE ---> /api/data
 
-	- [x] GET	- / --> Get all main services from clean ease
-	- [x] GET	- /:cleanServiceID --> Get all subCleanServices
+	GET	- / --> Get all main services from clean ease
+	GET	- /:cleanServiceID --> Get all subCleanServices
 
 RAZORPAY-ROUTE ---> /api/payment (REQUIRED USER JWT)
 
-	- [x] POST	- /create-order --> To create RazorPay Order
-	- [x] POST	- /validate --> To validate the RazorPay Payment
+	POST	- /create-order --> To create RazorPay Order
+	POST	- /validate --> To validate the RazorPay Payment
 
 USER-CHECKLIST-ROUTE ---> /api/checklist (REQUIRED USER JWT)
 
-	- [x] POST	- /create --> Create a new checklist item for user
-	- [x] GET	- /get --> Get all checklist items
-	- [x] PUT	- /update/:_id --> To Update Particular checklist item
-	- [x] DELETE	- /delete/:_id --> Delete a particular checklist item
+	POST	- /create --> Create a new checklist item for user
+	GET	- /get --> Get all checklist items
+	PUT	- /update/:_id --> To Update Particular checklist item
+	DELETE	- /delete/:_id --> Delete a particular checklist item
 
 ADMIN-ROUTE ---> /api/admin (REQUIRED ADMIN JWT)
 
-	- [x] GET	- /get-bookings --> To get all Users Bookingdetails
-	- [x] PUT	- /update-booking/:_id --> To update the user Booking
-	- [x] GET	- /get-total-users --> To get the details of total users
-	- [x] GET	- /get-users-with-bookings --> To get users with total number of bookings.
+	GET	- /get-bookings --> To get all Users Bookingdetails
+	PUT	- /update-booking/:_id --> To update the user Booking
+	GET	- /get-total-users --> To get the details of total users
+	GET	- /get-users-with-bookings --> To get users with total number of bookings.
