@@ -1,7 +1,7 @@
 # 🧹 CleanEase Site BackEnd
 
 ## 🚀 Overview
-This repository contains the backend of a functional booking platform for a cleaning service. The application is designed with a focus on providing a smooth and intuitive user experience. The backend is built with Node.js and Express.js, providing a robust and scalable solution for managing user bookings, user authentication and other logic. MongoDB is used as the database to store and manage data.
+This repository contains the backend of a functional booking platform for a cleaning service. The backend is built with Node.js and Express.js, providing a robust and scalable solution for managing user bookings, user authentication and other logic. MongoDB is used as the database to store and manage data.
 
 ## 🧰 Tech Stack
 
@@ -84,132 +84,15 @@ TEST_KEY_SECRET=YOUR_RAZOR_PAY_SECRET
 
 **API END-POINT EXPLANATION**
 
-<ol>
-    <li>AUTH-ROUTE ---> /api/auth
-        <ol>
-            <li>
-                POST -- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
-            </li>
-            <li>
-                GET  -- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
-            </li>
-            <li>
-                POST -- /login --> To Login registered User and generate JWT.
-            </li>
-            <li>
-                POST -- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
-            </li>
-            <li>
-                GET  -- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset their password.
-            </li>
-            <li>
-                PUT  -- /updatePass/:passResetToken --> To Update the user password.
-            </li>
-        </ol>
-    </li>
-    <li>USER-ROUTE ---> /api/user (REQUIRED USER JWT)
-        <ol>
-            <li>
-                GET  -- /getProfile --> To get the user details.
-            </li>
-            <li>
-                PUT  -- /updateProfile --> To update user details.
-            </li>
-        </ol>
-    </li>
-    <li>BOOKING-ROUTE ---> /api/bookings (REQUIRED USER JWT)
-        <ol>
-            <li>
-                POST -- /create/:cleanSubCategoriesID --> User to create bookings.
-            </li>
-            <li>
-                GET  -- /get --> Get All User's Bookings.
-            </li>
-            <li>
-                PUT  -- /update/:userBookingID --> To edit the user booking.
-            </li>
-            <li>
-                DELETE -- /delete/:bookingID --> To delete user bookings.
-            </li>
-            <li>
-                POST -- /review/:_id --> To create user review.
-            </li>
-            <li>
-                GET  -- /review/:_id --> To get all reviews for particular service (NO NEED FOR JWT).
-            </li>
-            <li>
-                DELETE -- /review/:_id/:deleteID --> To delete the user review.
-            </li>
-            <li>
-                PUT  -- /review/:_id/:reviewID --> To Update the user Review.
-            </li>
-            <li>
-                PUT  -- /payment-update --> To Update the payment status for user bookings.
-            </li>
-        </ol>
-    </li>
-    <li>NOTIFICATION-ROUTE ---> /api/notification (REQUIRED USER JWT)
-        <ol>
-            <li>
-                POST -- /create --> Create User Notification.
-            </li>
-            <li>
-                GET  -- /get --> Get user Notification.
-            </li>
-            <li>
-                DELETE -- /delete/:_id --> To Delete User Notification.
-            </li>
-        </ol>
-    </li>
-    <li>CLEANEASE-ROUTE ---> /api/data
-        <ol>
-            <li>
-                GET  -- / --> Get all main services from clean ease.
-            </li>
-            <li>
-                GET  -- /:cleanServiceID --> Get all subCleanServices.
-            </li>
-        </ol>
-    </li>
-    <li>RAZORPAY-ROUTE ---> /api/payment (REQUIRED USER JWT)
-        <ol>
-            <li>
-                POST -- /create-order --> To create RazorPay Order.
-            </li>
-            <li>
-                POST -- /validate --> To validate the RazorPay Payment.
-            </li>
-        </ol>
-    </li>
-    <li>USER-CHECKLIST-ROUTE ---> /api/checklist (REQUIRED USER JWT)
-        <ol>
-            <li>
-                POST -- /create --> Create a new checklist item for user.
-            </li>
-            <li>
-                GET  -- /get --> Get all checklist items.
-            </li>
-            <li>
-                PUT  -- /update/:_id --> To Update Particular checklist item.
-            </li>
-            <li>
-                DELETE -- /delete/:_id --> Delete a particular checklist item.
-            </li>
-        </ol>
-    </li>
-    <li>ADMIN-ROUTE ---> /api/admin (REQUIRED ADMIN JWT)
-        <ol>
-            <li>
-                GET  -- /get-bookings --> To get all Users Booking details.
-            </li>
-            <li>
-                PUT  -- /update-booking/:_id --> To update the user Booking.
-            </li>
-            <li>
-                GET  -- /get-total-users --> To get the details of total users.
-            </li>
-            <li>
-                GET  -- /get-users-with-bookings --> To get users with total number of bookings.
+AUTH-ROUTE ---> /api/auth
+
+	POST	- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
+	GET	- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
+	POST	- /login --> To Login registered User and generate JWT
+	POST	- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
+	GET	- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset there password.
+	PUT	- /updatePass/:passResetToken --> To Update the user password.
+
             </li>
         </ol>
     </li>
