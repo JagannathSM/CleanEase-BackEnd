@@ -84,11 +84,58 @@ TEST_KEY_SECRET=YOUR_RAZOR_PAY_SECRET
 
 **API END-POINT EXPLANATION**
 
---# AUTH-ROUTE ---> /api/auth
-
+- [x] AUTH-ROUTE ---> /api/auth
+      
 	POST	- /register --> To Create User in DB and send an Account Activation Link for user to activate his/her account.
 	GET	- /register-check/:registerToken --> To check the register token generated for the user and activate his/her account and generate JWT(JSON WEB TOKEN).
 	POST	- /login --> To Login registered User and generate JWT
 	POST	- /resetPass --> Check the user mailID and send the reset pass token to user mailID.
 	GET	- /resetPass-check/:passResetToken --> To verify the reset pass token and allow user to reset there password.
 	PUT	- /updatePass/:passResetToken --> To Update the user password.
+
+- [x] USER-ROUTE ---> /api/user (REQUIRED USER JWT)
+
+	GET	- /getProfile --> To get the user details.
+	PUT	- /updateProfile --> To update user details.
+
+- [x] BOOKING-ROUTE ---> /api/bookings (REQUIRED USER JWT)
+
+	POST	- /create/:cleanSubCategoriesID --> User to create bookings
+	GET	- /get --> Get All User's Bookings.
+	PUT	- /update/:userBookingID --> To edit the user booking
+	DELETE	- /delete/:bookingID --> To delete user bookings
+	POST	- /review/:_id --> To create user review
+	GET	- /review/:_id --> To get all reviews for particular service (NO NEED FOR JWT)
+	DELETE	- /review/:_id/:deleteID --> TO delete the user review
+	PUT	- /review/:_id/:reviewID --> To Update the user Review
+	PUT	- /payment-update --> To Update the payment status for user bookings.
+	
+- [x] NOTIFICATION-ROUTE ---> /api/notification (REQUIRED USER JWT)
+
+	POST	- /create --> Create User Notification
+	GET	- /get --> Get user Notification
+	DELETE	- /delete/:_id --> TO Delete User Notification
+
+- [x] CLEANEASE-ROUTE ---> /api/data
+
+	GET	- / --> Get all main services from clean ease
+	GET	- /:cleanServiceID --> Get all subCleanServices
+
+- [x] RAZORPAY-ROUTE ---> /api/payment (REQUIRED USER JWT)
+
+	POST	- /create-order --> To create RazorPay Order
+	POST	- /validate --> To validate the RazorPay Payment
+
+- [x] USER-CHECKLIST-ROUTE ---> /api/checklist (REQUIRED USER JWT)
+
+	POST	- /create --> Create a new checklist item for user
+	GET	- /get --> Get all checklist items
+	PUT	- /update/:_id --> To Update Particular checklist item
+	DELETE	- /delete/:_id --> Delete a particular checklist item
+
+- [x] ADMIN-ROUTE ---> /api/admin (REQUIRED ADMIN JWT)
+
+	GET	- /get-bookings --> To get all Users Bookingdetails
+	PUT	- /update-booking/:_id --> To update the user Booking
+	GET	- /get-total-users --> To get the details of total users
+	GET	- /get-users-with-bookings --> To get users with total number of bookings.
